@@ -119,10 +119,28 @@ public class Menu {
             }
         }
 
+        boolean choosingAccount = true, isSavingsAccount = false;
+        while (choosingAccount) {
+            System.out.println("What account would you like to open?\n1) Checking\n2) Savings");
+
+            switch (scnr.nextLine()) {
+                case "1":
+                    isSavingsAccount = false;
+                    choosingAccount = false;
+                    break;
+                case "2":
+                    isSavingsAccount = true;
+                    choosingAccount = false;
+                    break;
+                default:
+                    System.out.println("Please choose a valid option\n");
+            }
+        }
+
         System.out.println("Please enter deposit amount:");
         depositAmount = Double.parseDouble(scnr.nextLine());
         
-        customer.addAccount(depositAmount);
+        customer.addAccount(isSavingsAccount, depositAmount);
     }
     private Customer makeNewCustomer() {
         String firstName, lastName, pin;

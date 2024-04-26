@@ -1,6 +1,6 @@
 public class Account {
     static private int numOfAccounts = 1000;
-    private double balance;
+    protected double balance;
     private int accountNum;
     
     public double getBalance() {
@@ -17,7 +17,7 @@ public class Account {
     }
 
     public void withdraw(double amount) {
-        if (balance-amount >= 0) {
+        if (balance - amount >= 0) {
             balance -= amount;
             System.out.printf("Amount Withdrawn: $%.2f\nTotal: $%.2f\n", amount, balance);
         } else System.out.println("Insufficient funds! No withdrawal has taken place");

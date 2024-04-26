@@ -10,8 +10,15 @@ public class Customer {
         return pin;
     }
 
-    public void addAccount(double initAmount) {
-        Account acc = new Account(initAmount);
+    public void addAccount(boolean isSavingsAccount, double initAmount) {
+        Account acc;
+
+        if (isSavingsAccount) {
+            acc = new SavingsAccount(initAmount);
+        } else {
+            acc = new CheckingAccount(initAmount);
+        }
+
         accountList.add(acc);
         System.out.printf("Account %d added\n", acc.getAccountNum());
     }
