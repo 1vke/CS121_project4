@@ -1,10 +1,11 @@
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Customer {
     private String firstName, lastName, pin;
-    private ArrayList<Account> accountList = new ArrayList<>();
+    private LinkedList<Account> accountList = new LinkedList<>(); // Changed from array list to Linked List
     
-    public ArrayList<Account> getAccountList() {return accountList;}
+    public LinkedList<Account> getAccountList() {return accountList;}
     
     public String getPin() {
         return pin;

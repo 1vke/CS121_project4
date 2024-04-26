@@ -89,7 +89,7 @@ public class Menu {
     private void openNewAccount() {
         Customer customer = null;
         String pin;
-        Double depositAmount;
+        double depositAmount;
         
         boolean decidingNewCustomer = true;
         while (decidingNewCustomer) {
